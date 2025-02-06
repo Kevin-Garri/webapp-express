@@ -1,5 +1,5 @@
 const express = require("express");
-const router = express.Router();
+const movieRouter = express.Router();
 const movieController = require("../controllers/movieController");
 
 router.get("/", movieController.index);
@@ -7,4 +7,4 @@ router.get("/", movieController.index);
 router.get("/:id", movieController.show);
 
 
-module.exports = router;
+module.exports = movieRouter;

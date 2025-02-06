@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 const port = env.PORT || 3000;
+require("dotenv").config();
+const movieRouter = require("./routes/movieRouter");
 
 //middlewares
 const errorsHandler = require("./middlewares/errorHandler")
@@ -20,7 +22,7 @@ app.get("/", (req, res) => {
 });
 
 //rotta film
-app.use("/film", moviesRouter);
+app.use("/film", movieRouter);
 
 //error handler
 app.use(errorsHandler);
