@@ -6,6 +6,10 @@ const port = env.PORT || 3000;
 const errorsHandler = require("./middlewares/errorHandler")
 const notFound = require("./middlewares/notFound")
 
+//parsing body
+app.use(express.json());
+
+//listen
 app.listen(port, () => {
   console.log(`sono in ascolto sulla porta ${port}`);
 });
@@ -15,11 +19,11 @@ app.get("/", (req, res) => {
   res.send("I miei Film");
 });
 
-//rotta post
+//rotta film
 app.use("/film", moviesRouter);
 
-//error hand
+//error handler
 app.use(errorsHandler);
 
-//notFound hand
+//notFound
 app.use(notFound);
