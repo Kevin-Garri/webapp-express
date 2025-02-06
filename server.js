@@ -16,10 +16,10 @@ app.get("/", (req, res) => {
 });
 
 //rotta post
-app.use("/film", router);
+app.use("/film", moviesRouter);
 
 //error hand
-app.use(errorHand);
+app.use(errorsHandler);
 
 //notFound hand
 app.use(notFound);
